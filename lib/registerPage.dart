@@ -8,7 +8,15 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  final _text = TextEditingController();
+  bool _validate = false;
+
   @override
+  void dispose() {
+    _text.dispose();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -23,7 +31,10 @@ class _RegisterPageState extends State<RegisterPage> {
             padding: EdgeInsets.only(top: 100, bottom: 25),
             margin: EdgeInsets.symmetric(horizontal: 100),
             child: TextFormField(
-              decoration: InputDecoration(hintText: 'Nama Lengkap*'),
+              decoration: InputDecoration(
+                hintText: 'Nama Lengkap*',
+                errorText: _validate ? 'This Field Can\'t Be Empty' : null,
+              ),
             ),
           ),
           Container(
@@ -38,7 +49,10 @@ class _RegisterPageState extends State<RegisterPage> {
             margin: EdgeInsets.symmetric(horizontal: 100),
             child: TextFormField(
               obscureText: true,
-              decoration: InputDecoration(hintText: 'Password*'),
+              decoration: InputDecoration(
+                hintText: 'Password*',
+                //errorText: _validate ? 'This Field Can\'t Be Empty' : null,
+              ),
             ),
           ),
           Container(
@@ -52,7 +66,11 @@ class _RegisterPageState extends State<RegisterPage> {
           Container(
             margin: EdgeInsets.only(top: 50),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  _text.text.isEmpty ? _validate = true : _validate = false;
+                });
+              },
               child: Text('SIGN UP'),
             ),
           )

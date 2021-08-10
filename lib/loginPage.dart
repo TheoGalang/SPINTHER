@@ -11,8 +11,8 @@ class LoginPage extends StatefulWidget {
 class LoginPageState extends State<LoginPage> {
   TextEditingController usernameControler = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  String defUsername = 'asd';
-  String defPassword = 'asdf1234';
+  String defUsername = 'admin';
+  String defPassword = '123';
 
   String username = '';
   String password = '';
@@ -21,7 +21,7 @@ class LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Tutorial App'),
+          title: Text('SPINTHER'),
           centerTitle: true,
           backgroundColor: Colors.blueGrey,
         ),
@@ -30,6 +30,7 @@ class LoginPageState extends State<LoginPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
+              margin: EdgeInsets.only(bottom: 50),
               child: Image.asset(
                 'assets/image/UP.png',
                 height: 128,
