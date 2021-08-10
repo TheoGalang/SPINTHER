@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:spinther/diary_page/diaryLogin.dart';
 import 'package:spinther/loginPage.dart';
 
 void main() {
@@ -75,7 +76,7 @@ class _SplashScreenState extends State<SplashScreen> {
       //       ],
       //     )
       // ],),
-      body: LoginPage(),
+      body: DiaryLogin(),
       // body: Center(
       //   child: Column(
       //     mainAxisAlignment: MainAxisAlignment.center,
