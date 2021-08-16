@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "651407189852",
+    "project_id": "spinther-f5dcf",
+    "storage_bucket": "spinther-f5dcf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651407189852:android:050d93d5c2bf57a444c399",
+        "android_client_info": {
+          "package_name": "com.example.spinther"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "651407189852-5giqbr7mhd77de6pdghtvrcd7ml0dm7s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7S9_B_v_CoUBIVFavG-c2_nVhKcwYWew"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "651407189852-5giqbr7mhd77de6pdghtvrcd7ml0dm7s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
