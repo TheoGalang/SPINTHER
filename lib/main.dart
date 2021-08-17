@@ -76,7 +76,7 @@ class _SplashScreenState extends State<SplashScreen> {
       //       ],
       //     )
       // ],),
-      body: DiaryLogin(),
+      body: LoginPage(),
       // body: Center(
       //   child: Column(
       //     mainAxisAlignment: MainAxisAlignment.center,
