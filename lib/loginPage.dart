@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:spinther/homePage.dart';
+import 'package:spinther/home_page/homePage.dart';
+import 'package:spinther/home_page/griddashboard.dart';
 import 'package:spinther/registerPage.dart';
 
 class LoginPage extends StatefulWidget {
@@ -20,6 +21,7 @@ class LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.blue[900],
         appBar: AppBar(
           title: Text('SPINTHER'),
           centerTitle: true,
@@ -69,14 +71,21 @@ class LoginPageState extends State<LoginPage> {
               ),
             ),
             Container(
-              child: Text('Belum memiliki akun?'),
+              child: Text(
+                'Belum memiliki akun?',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
             InkWell(
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => RegisterPage()));
               },
-              child: Container(child: Text('Daftar Disini')),
+              child: Container(
+                  child: Text(
+                'Daftar Disini',
+                style: TextStyle(color: Colors.white),
+              )),
             )
           ],
         ));
