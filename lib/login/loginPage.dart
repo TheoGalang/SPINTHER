@@ -28,11 +28,7 @@ class LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     final loginProvider = Provider.of<AuthServices>(context);
     return Scaffold(
-        appBar: AppBar(
-          title: Text('SPINTHER'),
-          centerTitle: true,
-          backgroundColor: Colors.blueGrey,
-        ),
+        backgroundColor: Colors.blue[600],
         body: Form(
           key: _formKey,
           child: Column(

@@ -76,7 +76,9 @@ class _RegisterPageState extends State<RegisterPage> {
               child: TextFormField(
                 obscureText: true,
                 controller: _passwordController,
-                validator: (val) => val!.isEmpty ? "Please password" : null,
+                validator: (val) => val!.isEmpty || val.length < 8
+                    ? "Must be 8 character"
+                    : null,
                 decoration: InputDecoration(
                   hintText: 'Password*',
                   //errorText: _validate ? 'This Field Can\'t Be Empty' : null,

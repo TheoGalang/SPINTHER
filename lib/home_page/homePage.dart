@@ -59,6 +59,12 @@ class _HomePageState extends State<HomePage> {
           GridDashboard()
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          loginProvider.logout();
+        },
+        child: Icon(Icons.add),
+      ),
     );
   }
 }
