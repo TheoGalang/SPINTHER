@@ -21,12 +21,7 @@ class LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.blue[900],
-        appBar: AppBar(
-          title: Text('SPINTHER'),
-          centerTitle: true,
-          backgroundColor: Colors.blueGrey,
-        ),
+        backgroundColor: Colors.blue[600],
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,

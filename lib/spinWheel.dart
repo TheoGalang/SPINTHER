@@ -44,7 +44,12 @@ class _spinWheelState extends State<spinWheel> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Fortune Wheel'),
+        title: Text(
+          'Flutter Fortune Wheel',
+          style: TextStyle(
+              fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
       ),
       body: GestureDetector(
         onTap: () {
