@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:spinther/firebase/auth_services.dart';
-import 'package:spinther/homePage.dart';
 import 'package:spinther/login/registerPage.dart';
 
 class LoginPage extends StatefulWidget {

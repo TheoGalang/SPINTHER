@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:spinther/homePage.dart';
+import 'package:spinther/home_page/homePage.dart';
 import 'package:spinther/login/authentication.dart';
 
 class Wrapper extends StatelessWidget {
