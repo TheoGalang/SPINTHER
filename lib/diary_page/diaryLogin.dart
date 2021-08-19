@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:spinther/diary_page/diaryList.dart';
 import 'package:spinther/utils_widget/customappbar.dart';
 
 class DiaryLogin extends StatefulWidget {
@@ -161,7 +162,12 @@ class _OtpScreenState extends State<OtpScreen> {
                         width: 60.0,
                         child: MaterialButton(
                           height: 60.0,
-                          onPressed: null,
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => DiaryList()));
+                          },
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(60.0),
                           ),

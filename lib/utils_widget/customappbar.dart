@@ -27,7 +27,7 @@ Column customappbar(String tittle, BuildContext context) {
                 alignment: Alignment.center,
                 child: Text(tittle,
                     style: TextStyle(
-                        fontSize: 25,
+                        fontSize: 20,
                         color: Colors.white,
                         fontWeight: FontWeight.bold)),
               ),

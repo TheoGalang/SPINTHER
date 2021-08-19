@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'package:spinther/diary_page/diaryLogin.dart';
 import 'package:spinther/firebase/auth_services.dart';
 import 'package:spinther/spinWheel.dart';
@@ -18,20 +17,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final loginProvider = Provider.of<AuthServices>(context);
     return Scaffold(
-      appBar: AppBar(
-        leading: new Container(),
-        backgroundColor: Colors.blueGrey,
-        title: Text('Home Page'),
-        centerTitle: true,
-        actions: [
-          IconButton(
-              onPressed: () async {
-                await loginProvider.logout();
-              },
-              icon: Icon(Icons.exit_to_app)),
-        ],
-      ),
-      backgroundColor: Color(0xff0D47A1),
+      backgroundColor: Color(0xff1565C0),
       body: Column(
         children: <Widget>[
           SizedBox(
