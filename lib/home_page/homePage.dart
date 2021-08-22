@@ -65,12 +65,6 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          loginProvider.logout();
-        },
-        child: Icon(Icons.add),
-      ),
     );
   }
 }
