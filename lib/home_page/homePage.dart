@@ -1,8 +1,10 @@
+//import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:spinther/diary_page/diaryLogin.dart';
 import 'package:spinther/firebase/auth_services.dart';
-import 'package:spinther/spinWheel.dart';
+import 'package:spinther/spinWheel_page/spinWheel.dart';
 import 'package:spinther/home_page/griddashboard.dart';
 
 class HomePage extends StatefulWidget {

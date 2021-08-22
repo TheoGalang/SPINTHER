@@ -28,72 +28,74 @@ class LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     final loginProvider = Provider.of<AuthServices>(context);
     return Scaffold(
-        backgroundColor: Colors.blue[600],
-        body: Form(
-          key: _formKey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                margin: EdgeInsets.only(bottom: 50),
-                child: Image.asset(
-                  'assets/image/UP.png',
-                  height: 128,
-                ),
+      backgroundColor: Colors.blue[600],
+      body: Form(
+        key: _formKey,
+        //child: Flexible(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              margin: EdgeInsets.only(bottom: 50),
+              child: Image.asset(
+                'assets/image/UP.png',
+                height: 128,
               ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 100),
-                child: TextFormField(
-                  controller: _emailController,
-                  decoration: InputDecoration(hintText: 'Email'),
-                ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 100),
+              child: TextFormField(
+                controller: _emailController,
+                decoration: InputDecoration(hintText: 'Email'),
               ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 100),
-                child: TextFormField(
-                  controller: _passwordController,
-                  obscureText: true,
-                  decoration: InputDecoration(hintText: 'Password'),
-                ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 100),
+              child: TextFormField(
+                controller: _passwordController,
+                obscureText: true,
+                decoration: InputDecoration(hintText: 'Password'),
               ),
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 25),
-                child: ElevatedButton(
-                  onPressed: () async {
-                    if (_formKey.currentState!.validate()) {
-                      await loginProvider.login(_emailController.text.trim(),
-                          _passwordController.text.trim());
-                    }
-                  },
-                  style: ElevatedButton.styleFrom(primary: Colors.black),
-                  child: Text('LOGIN'),
-                ),
-              ),
-              Container(
-                child: Text('Belum memiliki akun?'),
-              ),
-              InkWell(
-                onTap: () {
-                  widget.toogleScreen();
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 25),
+              child: ElevatedButton(
+                onPressed: () async {
+                  if (_formKey.currentState!.validate()) {
+                    await loginProvider.login(_emailController.text.trim(),
+                        _passwordController.text.trim());
+                  }
                 },
-                child: Container(child: Text('Daftar Disini')),
+                style: ElevatedButton.styleFrom(primary: Colors.black),
+                child: Text('LOGIN'),
               ),
-              if (loginProvider.errorMessage != null)
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  color: Colors.amberAccent,
-                  child: ListTile(
-                    title: Text(loginProvider.errorMessage!),
-                    leading: Icon(Icons.error),
-                    trailing: IconButton(
-                      icon: Icon(Icons.close),
-                      onPressed: () => loginProvider.setMessage(null),
-                    ),
+            ),
+            Container(
+              child: Text('Belum memiliki akun?'),
+            ),
+            InkWell(
+              onTap: () {
+                widget.toogleScreen();
+              },
+              child: Container(child: Text('Daftar Disini')),
+            ),
+            if (loginProvider.errorMessage != null)
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                color: Colors.amberAccent,
+                child: ListTile(
+                  title: Text(loginProvider.errorMessage!),
+                  leading: Icon(Icons.error),
+                  trailing: IconButton(
+                    icon: Icon(Icons.close),
+                    onPressed: () => loginProvider.setMessage(null),
                   ),
-                )
-            ],
-          ),
-        ));
+                ),
+              )
+          ],
+        ),
+      ),
+    ); //);
   }
 }

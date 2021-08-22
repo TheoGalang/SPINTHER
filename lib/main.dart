@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
                     value: AuthServices().user, initialData: null)
               ],
               child: MaterialApp(
-                theme: ThemeData(primarySwatch: Colors.red),
+                theme: ThemeData(primarySwatch: Colors.blue),
                 home: Wrapper(),
               ),
             );
