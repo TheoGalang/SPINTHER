@@ -17,47 +17,51 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final loginProvider = Provider.of<AuthServices>(context);
     return Scaffold(
-      backgroundColor: Color(0xff1565C0),
-      body: Column(
-        children: <Widget>[
-          SizedBox(
-            height: 110,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 16, right: 16),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      "Halo SPINTHER",
-                      style: (TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold)),
-                    ),
-                    SizedBox(
-                      height: 4,
-                    ),
-                    Text(
-                      "Home",
-                      style: (TextStyle(
-                          color: Color(0xffa29aac),
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600)),
-                    ),
-                  ],
-                ),
-              ],
+      backgroundColor: Colors.blue[600],
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+          begin: Alignment.bottomRight,
+          end: Alignment.topLeft,
+          colors: [
+            Colors.lightBlue,
+            Color.fromRGBO(255, 237, 218, 10),
+          ],
+        )),
+        child: Column(
+          children: <Widget>[
+            SizedBox(
+              height: 110,
             ),
-          ),
-          SizedBox(
-            height: 40,
-          ),
-          GridDashboard()
-        ],
+            Padding(
+              padding: EdgeInsets.only(left: 16, right: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        "Halo, SPINTHER",
+                        style: (TextStyle(
+                          color: Colors.black,
+                          fontSize: 24,
+                        )),
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            GridDashboard()
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

@@ -28,8 +28,17 @@ class LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     final loginProvider = Provider.of<AuthServices>(context);
     return Scaffold(
-        backgroundColor: Colors.blue[600],
-        body: Form(
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+          begin: Alignment.bottomRight,
+          end: Alignment.topLeft,
+          colors: [
+            Colors.lightBlue,
+            Color.fromRGBO(255, 237, 218, 10),
+          ],
+        )),
+        child: Form(
           key: _formKey,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -45,6 +54,7 @@ class LoginPageState extends State<LoginPage> {
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 100),
                 child: TextFormField(
+                  style: TextStyle(fontSize: 15),
                   controller: _emailController,
                   decoration: InputDecoration(hintText: 'Email'),
                 ),
@@ -52,6 +62,7 @@ class LoginPageState extends State<LoginPage> {
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 100),
                 child: TextFormField(
+                  style: TextStyle(fontSize: 15),
                   controller: _passwordController,
                   obscureText: true,
                   decoration: InputDecoration(hintText: 'Password'),
@@ -66,7 +77,6 @@ class LoginPageState extends State<LoginPage> {
                           _passwordController.text.trim());
                     }
                   },
-                  style: ElevatedButton.styleFrom(primary: Colors.black),
                   child: Text('LOGIN'),
                 ),
               ),
@@ -94,6 +104,8 @@ class LoginPageState extends State<LoginPage> {
                 )
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
