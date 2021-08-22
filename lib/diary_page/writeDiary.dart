@@ -10,7 +10,15 @@ class WriteDiary extends StatefulWidget {
 }
 
 Color color = Colors.white;
-List colors = [Colors.red[100], Colors.green[300], Colors.yellow[100]];
+List colors = [
+  Colors.red[100],
+  Colors.green[100],
+  Colors.yellow[100],
+  Colors.cyan[100],
+  Colors.amber[100],
+  Colors.blueGrey[100],
+  Colors.blue[100]
+];
 Random random = new Random();
 int index = 0;
 
@@ -18,12 +26,13 @@ class _WriteDiaryState extends State<WriteDiary> {
   @override
   Widget build(BuildContext context) {
     void changeIndex() {
-      setState(() => index = random.nextInt(3));
+      setState(() => index = random.nextInt(7));
     }
 
     return Scaffold(
       backgroundColor: color,
       appBar: AppBar(
+        backgroundColor: Colors.indigo,
         title: Text(
           'My Diary',
           style: TextStyle(
@@ -39,7 +48,7 @@ class _WriteDiaryState extends State<WriteDiary> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height / 4.5,
-                color: Colors.blue,
+                color: Colors.indigo,
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -170,7 +179,7 @@ class _WriteDiaryState extends State<WriteDiary> {
                               height: 70,
                               child: GestureDetector(
                                 onTap: () => setState(() =>
-                                    color = colors[index = random.nextInt(3)]),
+                                    color = colors[index = random.nextInt(7)]),
                                 child: SizedBox(
                                   child: Column(
                                     mainAxisAlignment:

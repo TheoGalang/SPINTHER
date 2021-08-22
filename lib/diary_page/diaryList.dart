@@ -51,6 +51,7 @@ class _DiaryListState extends State<DiaryList> {
     return Scaffold(
       // backgroundColor: Colors.blue[600],
       appBar: AppBar(
+        backgroundColor: Colors.indigo,
         title: Text(
           'My List Diary',
           style: TextStyle(
@@ -58,79 +59,92 @@ class _DiaryListState extends State<DiaryList> {
         ),
         centerTitle: true,
       ),
-      body: GroupedListView<dynamic, String>(
-        elements: _dataDummy,
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+          begin: Alignment.bottomRight,
+          end: Alignment.topLeft,
+          colors: [
+            Colors.lightBlue,
+            Color.fromRGBO(255, 237, 218, 10),
+          ],
+        )),
+        child: GroupedListView<dynamic, String>(
+          elements: _dataDummy,
 
-        groupBy: (element) => DateFormat('MMMM, yyyy', 'ID').format(
-          DateTime.parse(element['date']),
-        ),
-        groupSeparatorBuilder: (String groupByValue) => Padding(
-          padding: EdgeInsets.all(10),
-          child: Row(
-            children: [
-              Container(
-                margin: EdgeInsets.only(left: 10, right: 10),
-                child: Text(
-                  groupByValue,
-                  textAlign: TextAlign.start,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-              )
-            ],
+          groupBy: (element) => DateFormat('MMMM, yyyy', 'ID').format(
+            DateTime.parse(element['date']),
           ),
-        ),
-        itemBuilder: (context, dynamic element) {
-          return Card(
-            elevation: 10,
-            margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-            child: Container(
-              padding: EdgeInsets.all(10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: ClipRRect(
-                      child: Image.asset(
-                        element['icon'],
-                        fit: BoxFit.cover,
-                      ),
-                      borderRadius: BorderRadius.circular(5),
-                    ),
+          groupSeparatorBuilder: (String groupByValue) => Padding(
+            padding: EdgeInsets.all(10),
+            child: Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(left: 10, right: 10),
+                  child: Text(
+                    groupByValue,
+                    textAlign: TextAlign.start,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
-                  Expanded(
-                    flex: 5,
-                    child: Container(
-                      padding: EdgeInsets.only(bottom: 10),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 10, right: 10),
-                            child: Text(
-                              element['title'],
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.bold),
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                        ],
+                )
+              ],
+            ),
+          ),
+          itemBuilder: (context, dynamic element) {
+            return Card(
+              color: Colors.white70,
+              elevation: 10,
+              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              child: Container(
+                padding: EdgeInsets.all(10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: ClipRRect(
+                        child: Image.asset(
+                          element['icon'],
+                          fit: BoxFit.cover,
+                        ),
+                        borderRadius: BorderRadius.circular(5),
                       ),
                     ),
-                  )
-                ],
+                    Expanded(
+                      flex: 5,
+                      child: Container(
+                        padding: EdgeInsets.only(bottom: 10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              child: Text(
+                                element['title'],
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.bold),
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
-            ),
-          );
-        },
-        itemComparator: (item1, item2) =>
-            item1['title'].compareTo(item2['title']), // optional
-        useStickyGroupSeparators: false, // optional
-        floatingHeader: false, // optional
+            );
+          },
+          itemComparator: (item1, item2) =>
+              item1['title'].compareTo(item2['title']), // optional
+          useStickyGroupSeparators: false, // optional
+          floatingHeader: false, // optional
+        ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.indigo,
         onPressed: () {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => WriteDiary()));

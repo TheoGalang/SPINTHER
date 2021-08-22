@@ -51,42 +51,53 @@ class _spinWheelState extends State<spinWheel> {
         ),
         centerTitle: true,
       ),
-      body: GestureDetector(
-        onTap: () {
-          // setState(() {
-          //   selected.add(
-          //     Fortune.randomInt(0, items.length),
-          //   );
-          // });
-        },
-        child: Column(
-          children: [
-            Expanded(
-              child: FortuneWheel(
-                selected: selected.stream,
-                items: [
-                  for (var it in items)
-                    FortuneItem(
-                        style: FortuneItemStyle(
-                            borderColor: Colors.white,
-                            color: it['color'] as Color),
-                        child: customFortuneItem(it)),
-                ],
-              ),
-            ),
-            Container(
-              child: ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    selected.add(
-                      Fortune.randomInt(0, items.length),
-                    );
-                  });
-                },
-                child: Text('Push Me'),
-              ),
-            ),
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+          begin: Alignment.bottomRight,
+          end: Alignment.topLeft,
+          colors: [
+            Colors.lightBlue,
+            Color.fromRGBO(255, 237, 218, 10),
           ],
+        )),
+        child: GestureDetector(
+          onTap: () {
+            // setState(() {
+            //   selected.add(
+            //     Fortune.randomInt(0, items.length),
+            //   );
+            // });
+          },
+          child: Column(
+            children: [
+              Expanded(
+                child: FortuneWheel(
+                  selected: selected.stream,
+                  items: [
+                    for (var it in items)
+                      FortuneItem(
+                          style: FortuneItemStyle(
+                              borderColor: Colors.white,
+                              color: it['color'] as Color),
+                          child: customFortuneItem(it)),
+                  ],
+                ),
+              ),
+              Container(
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      selected.add(
+                        Fortune.randomInt(0, items.length),
+                      );
+                    });
+                  },
+                  child: Text('Push Me'),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

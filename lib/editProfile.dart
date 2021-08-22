@@ -48,6 +48,8 @@ class _editProfileState extends State<editProfile> {
 
     return Scaffold(
       appBar: AppBar(
+        title: Text("Settings"),
+        centerTitle: true,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
@@ -68,6 +70,15 @@ class _editProfileState extends State<editProfile> {
         ],
       ),
       body: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+            begin: Alignment.bottomRight,
+            end: Alignment.topLeft,
+            colors: [
+              Colors.lightBlue,
+              Color.fromRGBO(255, 237, 218, 10),
+            ],
+          )),
           padding: EdgeInsets.only(left: 16, top: 25, right: 16),
           child: GestureDetector(
             onTap: () {
@@ -98,11 +109,6 @@ class _editProfileState extends State<editProfile> {
                         onPressed: () {},
                         child: Text(
                           "SAVE",
-                          style: TextStyle(
-                            fontSize: 14,
-                            letterSpacing: 1.5,
-                            color: Colors.black,
-                          ),
                         )),
                   ],
                 )

@@ -18,8 +18,13 @@ class _DiaryLoginState extends State<DiaryLogin> {
         body: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(
-                  colors: [Colors.blue, Colors.blue],
-                  begin: Alignment.topRight)),
+            begin: Alignment.bottomRight,
+            end: Alignment.topLeft,
+            colors: [
+              Colors.lightBlue,
+              Color.fromRGBO(255, 237, 218, 10),
+            ],
+          )),
           child: OtpScreen(),
         ),
       ),
@@ -42,10 +47,10 @@ class _OtpScreenState extends State<OtpScreen> {
   var outlineInputBorder = InputDecoration(
     contentPadding: EdgeInsets.all(16.0),
     enabledBorder:
-        UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+        UnderlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
     focusedBorder:
-        UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
-    border: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+        UnderlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
+    border: UnderlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
   );
 
   int pinIndex = 0;
@@ -57,7 +62,7 @@ class _OtpScreenState extends State<OtpScreen> {
           Container(
             height: MediaQuery.of(context).size.height / 3.5,
             width: MediaQuery.of(context).size.width,
-            child: Image.asset("assets/image/Diary.png"),
+            child: Image.asset("assets/image/diaryLogo.png"),
           ),
           Container(
             alignment: Alignment(0, 0.5),
@@ -173,7 +178,7 @@ class _OtpScreenState extends State<OtpScreen> {
                           ),
                           child: Image.asset(
                             "assets/image/done.png",
-                            color: Colors.white30,
+                            color: Colors.black,
                           ),
                         ),
                       ),
@@ -195,7 +200,7 @@ class _OtpScreenState extends State<OtpScreen> {
                           ),
                           child: Image.asset(
                             "assets/image/delete.png",
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                       ),
@@ -286,7 +291,7 @@ class _OtpScreenState extends State<OtpScreen> {
     return Text(
       "Masukkan PIN",
       style: TextStyle(
-        color: Colors.white,
+        color: Colors.blue[800],
         fontSize: 20.0,
         fontWeight: FontWeight.bold,
       ),
@@ -311,7 +316,9 @@ class PINNumber extends StatelessWidget {
         textAlign: TextAlign.center,
         decoration: outlineInputBorder,
         style: TextStyle(
-            fontWeight: FontWeight.bold, fontSize: 30.0, color: Colors.white),
+            fontWeight: FontWeight.bold,
+            fontSize: 30.0,
+            color: Colors.blue[800]),
       ),
     );
   }
@@ -328,7 +335,7 @@ class KeyboardNumber extends StatelessWidget {
         height: 50.0,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
-          color: Colors.white.withOpacity(0.1),
+          color: Colors.white.withOpacity(0.4),
         ),
         alignment: Alignment.center,
         child: MaterialButton(
@@ -342,7 +349,7 @@ class KeyboardNumber extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontSize: 24 * MediaQuery.of(context).textScaleFactor,
-                  color: Colors.white,
+                  color: Colors.blue,
                   fontWeight: FontWeight.bold),
             )));
   }
