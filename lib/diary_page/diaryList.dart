@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grouped_list/grouped_list.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
+import 'package:spinther/diary_page/writeDiary.dart';
 
 List _dataDummy = [
   {
@@ -48,6 +49,7 @@ class _DiaryListState extends State<DiaryList> {
   Widget build(BuildContext context) {
     initializeDateFormatting('id', null);
     return Scaffold(
+      // backgroundColor: Colors.blue[600],
       appBar: AppBar(
         title: Text(
           'My List Diary',
@@ -130,7 +132,8 @@ class _DiaryListState extends State<DiaryList> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("clicked");
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => WriteDiary()));
         },
         child: Icon(Icons.add),
       ),

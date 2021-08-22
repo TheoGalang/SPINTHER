@@ -28,44 +28,66 @@ class LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     final loginProvider = Provider.of<AuthServices>(context);
     return Scaffold(
-      backgroundColor: Colors.blue[600],
-      body: Form(
-        key: _formKey,
-        //child: Flexible(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              margin: EdgeInsets.only(bottom: 50),
-              child: Image.asset(
-                'assets/image/UP.png',
-                height: 128,
+
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+          begin: Alignment.bottomRight,
+          end: Alignment.topLeft,
+          colors: [
+            Colors.lightBlue,
+            Color.fromRGBO(255, 237, 218, 10),
+          ],
+        )),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                margin: EdgeInsets.only(bottom: 50),
+                child: Image.asset(
+                  'assets/image/UP.png',
+                  height: 128,
+                ),
               ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 100),
-              child: TextFormField(
-                controller: _emailController,
-                decoration: InputDecoration(hintText: 'Email'),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 100),
+                child: TextFormField(
+                  style: TextStyle(fontSize: 15),
+                  controller: _emailController,
+                  decoration: InputDecoration(hintText: 'Email'),
+                ),
               ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 100),
-              child: TextFormField(
-                controller: _passwordController,
-                obscureText: true,
-                decoration: InputDecoration(hintText: 'Password'),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 100),
+                child: TextFormField(
+                  style: TextStyle(fontSize: 15),
+                  controller: _passwordController,
+                  obscureText: true,
+                  decoration: InputDecoration(hintText: 'Password'),
+                ),
               ),
-            ),
-            Container(
-              padding: EdgeInsets.symmetric(vertical: 25),
-              child: ElevatedButton(
-                onPressed: () async {
-                  if (_formKey.currentState!.validate()) {
-                    await loginProvider.login(_emailController.text.trim(),
-                        _passwordController.text.trim());
-                  }
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 25),
+                child: ElevatedButton(
+                  onPressed: () async {
+                    if (_formKey.currentState!.validate()) {
+                      await loginProvider.login(_emailController.text.trim(),
+                          _passwordController.text.trim());
+                    }
+                  },
+                  child: Text('LOGIN'),
+                ),
+              ),
+              Container(
+                child: Text('Belum memiliki akun?'),
+              ),
+              InkWell(
+                onTap: () {
+                  widget.toogleScreen();
+
                 },
                 style: ElevatedButton.styleFrom(primary: Colors.black),
                 child: Text('LOGIN'),
@@ -91,11 +113,12 @@ class LoginPageState extends State<LoginPage> {
                     icon: Icon(Icons.close),
                     onPressed: () => loginProvider.setMessage(null),
                   ),
-                ),
-              )
-          ],
+                )
+            ],
+          ),
         ),
       ),
-    ); //);
+    );
+
   }
 }

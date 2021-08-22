@@ -71,7 +71,7 @@ class _GridDashboardState extends State<GridDashboard> {
               },
               child: Container(
                 decoration: BoxDecoration(
-                    color: Color(color),
+                    color: Color.fromRGBO(244, 249, 249, 50),
                     borderRadius: BorderRadius.circular(10)),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -86,7 +86,7 @@ class _GridDashboardState extends State<GridDashboard> {
                     Text(
                       data.title,
                       style: (TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 16,
                           fontWeight: FontWeight.w600)),
                     ),

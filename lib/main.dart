@@ -30,7 +30,9 @@ class MyApp extends StatelessWidget {
                     value: AuthServices().user, initialData: null)
               ],
               child: MaterialApp(
-                theme: ThemeData(primarySwatch: Colors.blue),
+                theme:
+                    ThemeData(primarySwatch: Colors.indigo, fontFamily: 'Exo'),
+
                 home: Wrapper(),
               ),
             );
