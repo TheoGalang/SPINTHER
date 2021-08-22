@@ -1,6 +1,9 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:spinther/firebase/auth_services.dart';
+import 'package:spinther/login/enums.dart';
 
 class RegisterPage extends StatefulWidget {
   final Function toogleScreen;
@@ -11,6 +14,7 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  accountType? _type = accountType.user;
   final _text = TextEditingController();
 
   late TextEditingController _emailController;

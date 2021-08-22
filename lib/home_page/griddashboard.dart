@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spinther/diary_page/diaryLogin.dart';
-import 'package:spinther/spinWheel.dart';
+import 'package:spinther/editProfile.dart';
+import 'package:spinther/spinWheel_page/spinWheel.dart';
 
 class GridDashboard extends StatefulWidget {
   @override
@@ -49,7 +50,7 @@ class _GridDashboardState extends State<GridDashboard> {
       // subtitle: "",
       // event: "2 Items",
       img: "assets/image/done.png",
-      changePage: spinWheel());
+      changePage: editProfile());
 
   @override
   Widget build(BuildContext context) {

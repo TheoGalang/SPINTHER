@@ -28,6 +28,7 @@ class LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     final loginProvider = Provider.of<AuthServices>(context);
     return Scaffold(
+
       body: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -86,20 +87,31 @@ class LoginPageState extends State<LoginPage> {
               InkWell(
                 onTap: () {
                   widget.toogleScreen();
+
                 },
-                child: Container(child: Text('Daftar Disini')),
+                style: ElevatedButton.styleFrom(primary: Colors.black),
+                child: Text('LOGIN'),
               ),
-              if (loginProvider.errorMessage != null)
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  color: Colors.amberAccent,
-                  child: ListTile(
-                    title: Text(loginProvider.errorMessage!),
-                    leading: Icon(Icons.error),
-                    trailing: IconButton(
-                      icon: Icon(Icons.close),
-                      onPressed: () => loginProvider.setMessage(null),
-                    ),
+            ),
+            Container(
+              child: Text('Belum memiliki akun?'),
+            ),
+            InkWell(
+              onTap: () {
+                widget.toogleScreen();
+              },
+              child: Container(child: Text('Daftar Disini')),
+            ),
+            if (loginProvider.errorMessage != null)
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                color: Colors.amberAccent,
+                child: ListTile(
+                  title: Text(loginProvider.errorMessage!),
+                  leading: Icon(Icons.error),
+                  trailing: IconButton(
+                    icon: Icon(Icons.close),
+                    onPressed: () => loginProvider.setMessage(null),
                   ),
                 )
             ],
@@ -107,5 +119,6 @@ class LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+
   }
 }

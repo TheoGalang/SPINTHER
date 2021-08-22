@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
               child: MaterialApp(
                 theme:
                     ThemeData(primarySwatch: Colors.indigo, fontFamily: 'Exo'),
+
                 home: Wrapper(),
               ),
             );
